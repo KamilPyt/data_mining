@@ -70,7 +70,7 @@ server <- function(input, output) {
   output$distPlot <- renderPlot({
     x<-diabetes$glyhb
    bins<-seq(min(x), max(x),length.out=input$bins)
-   hist(diabetes$glyhb, breaks=bins, freq=FALSE,xlim=range(2,bins),yaxp=c(0,1,10),xaxp=c(2,17,15), col='grey',xlab="Poziom hemoglobiny glikowanej w %",ylab="Częstość", main="Poziom zagrożenia cukrzycowego")
+   hist(diabetes$glyhb, breaks=bins, freq=FALSE,xlim=range(2,bins),yaxp=c(0,1,10),xaxp=c(2,17,15), col='grey',xlab="Poziom hemoglobiny glikowanej w %",ylab="Częstliwość występowania", main="Poziom zagrożenia cukrzycowego")
    
    })
   
