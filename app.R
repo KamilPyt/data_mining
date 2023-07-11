@@ -2,6 +2,8 @@ library(shinythemes)
 library(openxlsx)
 
 ui <- fluidPage(
+  tags$head(
+    tags$title("Data Mining")),
   theme=shinytheme("cyborg"),
   titlePanel( h1("Data mining", align="center")),
   
@@ -21,7 +23,7 @@ ui <- fluidPage(
     mainPanel( 
       br(), br(), h5(strong("Data mining"), "stanowi proces pozyskiwania nowych informacji ze zbiorów danych. Z tego względu technika ta związana jest z odkrywaniem wiedzy w bazach danych, czyli Knowledge Discovery in Databases. Techniki data mining pozwalają uzyskać dwa rodzaje wyników – pozwalające sformułować prognozy na przyszłość lub opisujące posiadane dane."),br(),br(),
   
-      img(src="data_mining.png", align="center", width=560),
+      img(src="data_mining.jpg", align="center", width=560),
       hr(),
       h3("Postępowanie w Data mining"),br(),
       h4("1. Ustanowienie celu biznesowego", br()),
@@ -64,8 +66,8 @@ server <- function(input, output) {
     }
     })
   
-  diabetes=read.csv("diabetes.csv")
-  #alternatywnie#    diabetes <- read.csv("https://query.data.world/s/jrr23dpipskivzzakjlh3l4niclg7l", header=TRUE, stringsAsFactors=FALSE);
+  #alternatywnie# diabetes=read.csv("diabetes.csv")
+  diabetes <- read.csv("https://query.data.world/s/jrr23dpipskivzzakjlh3l4niclg7l", header=TRUE, stringsAsFactors=FALSE);
   
   output$distPlot <- renderPlot({
     x<-diabetes$glyhb
